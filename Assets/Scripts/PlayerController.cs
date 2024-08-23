@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private float jumpForce = 10f;
 
+    [SerializeField] CameraController cam;
     [SerializeField] Rigidbody2D playerRb;
     [SerializeField] SpriteRenderer sr;
     [SerializeField] Color colorCyan;
@@ -34,8 +35,10 @@ public class PlayerController : MonoBehaviour
             SetRandomColor();
             Destroy(collision.gameObject);
         }
-        if(collision.tag !=currentColor)
+        if(collision.tag !=currentColor && collision.tag != "colorChanger" )
         {
+            this.transform.position = new Vector3(0, -12, 0);
+            cam.ResetCamera();
             Debug.Log("GAME OVER!!");
         }
     }
