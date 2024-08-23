@@ -8,6 +8,7 @@ TagManager:
   - yellow
   - pink
   - majenta
+  - colorChanger
   layers:
   - Default
   - TransparentFX
